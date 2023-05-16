@@ -1,7 +1,7 @@
 {% extends "maths/main.html" %}
 
-{% block title %}{{ title }}{% endblock %}
+{% block title %}{{ data.get_operation }}{% endblock %}
 
 {% block content %}
-   Wynik operacji {{ a }} {{ operacja }} {{ b }} wynosi {{ wynik }}
+   Wynik operacji {{ data.get_a }} {{ data.get_sign }} {{ data.get_b }} wynosi {{ data.get_math }}
 {% endblock %}
