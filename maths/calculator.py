@@ -24,25 +24,38 @@ class Calculator:
         return d["math"]
 
     def check_if_zero(self): # może to nie najładniejsze rozwiązanie, ale lambda w słowniku nie przechodziła :(
-        return self.a / self.b if self.b != 0 else "dzielenie przez 0 to zło"
+        return self.div() if self.b != 0 else "dzielenie przez 0 to zło"
+
+    def add(self):
+        return self.a + self.b
+
+    def sub(self):
+        return self.a - self.b
+
+    def mul(self):
+        return self.a * self.b
+
+    def div(self):
+        return self.a / self.b
 
     def operation_type(self):
-        division = self.check_if_zero()
         return {
             "add": {
                 "sign": "+",
-                "math": self.a + self.b,
+                "math": self.add(),
             },
             "sub": {
                 "sign": "-",
-                "math": self.a - self.b,
+                "math": self.sub(),
             },
             "mul": {
                 "sign": "*",
-                "math": self.a * self.b,
+                "math": self.mul(),
             },
             "div": {
                 "sign": "/",
-                "math": division,
+                "math": self.check_if_zero(),
             },
         }
+# warning: in the working copy of '.idea/inspectionProfiles/profiles_settings.xml', LF will be replaced by CRLF the next time Git touches it
+# maths/__pycache__/calculator.cpython-38.pyc
