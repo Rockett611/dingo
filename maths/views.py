@@ -1,12 +1,16 @@
+from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import loader, Context
 
 from .calculator import Calculator
+from .forms import ResultForm
+from .models import Math, Result
 
 
 def math(request):
     return render(request, "maths/main.html", {})
+
 
 """
 def add(request, a, b):
@@ -36,6 +40,60 @@ def div(request, a, b):
 
     return render(request, "maths/operations.html", c)
 """
-def math_operation(request ,operation, a, b):
+
+
+def math_operation(request, operation, a, b):
     calc = Calculator(operation, a, b)
+    result = Result.objects.get_or_create(value=calc.operation_type()[operation]['math'])[0]
+    Math.objects.create(operation=operation, a=a, b=b, result=result)
     return render(request, "maths/operations.html", {"data": calc})
+
+
+def maths_list(request):
+    maths = Math.objects.all()
+    return render(
+        request=request,
+        template_name="maths/list.html",
+        context={"maths": maths}
+    )
+
+
+def math_details(request, id):
+    math = Math.objects.get(id=id)
+    return render(
+        request=request,
+        template_name="maths/details.html",
+        context={"math": math}
+    )
+
+
+def results_list(request):
+    if request.method == "POST":
+        form = ResultForm(data=request.POST)
+
+        if form.is_valid():
+            if form.cleaned_data['error'] == '':
+                form.cleaned_data['error'] = None
+            Result.objects.get_or_create(form.cleaned_data)
+            messages.add_message(
+                request,
+                messages.SUCCESS,
+                "Utworzono nowy Result!!"
+            )
+        else:
+            messages.add_message(
+                request,
+                messages.ERROR,
+                form.errors['__all__']
+            )
+
+    form = ResultForm()
+    results = Result.objects.all()
+    return render(
+        request=request,
+        template_name="maths/results.html",
+        context={
+            "results": results,
+            "form": form
+        }
+    )
