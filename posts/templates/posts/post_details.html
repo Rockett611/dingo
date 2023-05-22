@@ -1,0 +1,14 @@
+{% extends "posts/main.html" %}
+
+{% block title %} post jeden {% endblock %}
+
+{% block content %}
+    <h2>{{ post.title }}</h2>
+    <p>dodany: {{ post.created }}, przez: <a href="{% url "posts:author_details" author.id %}">{{ author.nick }}</a> </p>
+    {% if post.modified != post.created %}
+        <p>modyfikowany: {{ post.modified }}</p>
+    {% endif %}
+    <p>{{ post.content }}</p>
+
+    <p> do artykułów powrót: <a href="{% url "posts:posts_list" %}">klik</a></p>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "posts/main.html" %}
+
+{% block title %} autor jeden {% endblock %}
+
+{% block content %}
+    <table>
+        <tr>
+            <th>Nick</th>
+            <td>{{ author.nick }}</td>
+        </tr>
+        <tr>
+            <th>Mail</th>
+            <td>{{ author.email }}</td>
+        </tr>
+        <tr>
+            <th>Dodał(a)</th>
+            <td>
+                <ul>
+                    {% for post in posts %}
+                        <li><a href="{% url "posts:post_details" post.id %}">{{ post.title }}</a></li>
+                    {% empty %}
+                        <li>na teraz postów brak</li>
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <p> do autorów powrót: <a href="{% url "posts:authors_list" %}">klik</a></p>
+{% endblock %}
