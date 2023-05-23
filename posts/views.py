@@ -22,12 +22,14 @@ def add_post(request):
     if request.method == "POST":
         form = PostForm(data=request.POST)
         if form.is_valid():
-            f_title = form.cleaned_data["title"]
-            f_content = form.cleaned_data["content"]
-            a_author = form.cleaned_data["author"]
-            a_email = form.cleaned_data["email"]
-            obj_a, created = Author.objects.get_or_create(nick = a_author, email = a_email)
-            obj_p, created = Post.objects.get_or_create(title = f_title, content = f_content, author = obj_a)
+            form.save()
+
+            # f_title = form.cleaned_data["title"]
+            # f_content = form.cleaned_data["content"]
+            # a_author = form.cleaned_data["author"]
+            # a_email = form.cleaned_data["email"]
+            # obj_a, created = Author.objects.get_or_create(nick = a_author, email = a_email)
+            # obj_p, created = Post.objects.get_or_create(title = f_title, content = f_content, author = obj_a)
 
     form = PostForm()
     return render(request, 'posts/add_post.html', {'form': form})

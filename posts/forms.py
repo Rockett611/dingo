@@ -1,5 +1,7 @@
 from django import forms
 
+from posts.models import Post, Author
+
 
 class AuthorForm(forms.Form):
     nick = forms.CharField(max_length=15)
@@ -13,9 +15,14 @@ class AuthorForm(forms.Form):
             raise forms.ValidationError("Podaj poprawny imajl")
 
 
-class PostForm(forms.Form):
-    title = forms.CharField(max_length=50)
-    content = forms.CharField(max_length=300)
-    author = forms.CharField(max_length=15)
-    email = forms.EmailField()
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ["title", "content", "author"]
 
+"""
+class AuthorForm(forms.ModelForm):
+    class Meta:
+        model: Author
+        fields: '__all__'
+"""
