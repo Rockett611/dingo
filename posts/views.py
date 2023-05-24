@@ -48,7 +48,7 @@ def authors_list(request):
             messages.add_message(
                 request,
                 messages.SUCCESS,
-                "Utworzono nowy Result!!"
+                "Utworzono nowego Autora!!"
             )
         else:
             messages.add_message(
