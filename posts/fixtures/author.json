@@ -1,0 +1,34 @@
+[
+{
+    "model": "posts.author",
+    "pk": 1,
+    "fields": {
+        "nick": "Ziemowit",
+        "email": "ziemniak@grund.pl"
+    }
+},
+{
+    "model": "posts.author",
+    "pk": 2,
+    "fields": {
+        "nick": "andromeda",
+        "email": "esmeralda@mamayao.su"
+    }
+},
+{
+    "model": "posts.author",
+    "pk": 3,
+    "fields": {
+        "nick": "maupa",
+        "email": "maupa@djungla.pl"
+    }
+},
+{
+    "model": "posts.author",
+    "pk": 4,
+    "fields": {
+        "nick": "dziedziczka",
+        "email": "czertoryska@hrabina.pl"
+    }
+}
+]

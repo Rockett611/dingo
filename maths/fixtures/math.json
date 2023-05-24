@@ -1,0 +1,123 @@
+[
+  {
+    "model": "maths.math",
+    "pk": 1,
+    "fields": {
+      "operation": "add",
+      "a": 1,
+      "b": 2,
+      "created": "2023-05-20T09:00:00.042Z",
+      "result": 2
+    }
+  },
+  {
+    "model": "maths.math",
+    "pk": 2,
+    "fields": {
+      "operation": "sub",
+      "a": 10,
+      "b": 20,
+      "created": "2023-05-20T09:01:03.506Z",
+      "result": null
+    }
+  },
+  {
+    "model": "maths.math",
+    "pk": 3,
+    "fields": {
+      "operation": "div",
+      "a": 11,
+      "b": 2,
+      "created": "2023-05-20T09:02:24.834Z",
+      "result": null
+    }
+  },
+  {
+    "model": "maths.math",
+    "pk": 4,
+    "fields": {
+      "operation": "mul",
+      "a": 6,
+      "b": 914,
+      "created": "2023-05-20T22:37:22.643Z",
+      "result": 3
+    }
+  },
+  {
+    "model": "maths.math",
+    "pk": 5,
+    "fields": {
+      "operation": "mul",
+      "a": 88,
+      "b": 88,
+      "created": "2023-05-21T09:50:56.501Z",
+      "result": 5
+    }
+  },
+  {
+    "model": "maths.math",
+    "pk": 6,
+    "fields": {
+      "operation": "mul",
+      "a": 88,
+      "b": 88,
+      "created": "2023-05-21T11:30:16.813Z",
+      "result": 5
+    }
+  },
+  {
+    "model": "maths.math",
+    "pk": 7,
+    "fields": {
+      "operation": "add",
+      "a": 16,
+      "b": 32,
+      "created": "2023-05-22T10:58:28.661Z",
+      "result": 6
+    }
+  },
+  {
+    "model": "maths.math",
+    "pk": 8,
+    "fields": {
+      "operation": "sub",
+      "a": 8,
+      "b": 4,
+      "created": "2023-05-24T00:03:28.661Z",
+      "result": 4
+    }
+  },
+  {
+    "model": "maths.math",
+    "pk": 9,
+    "fields": {
+      "operation": "div",
+      "a": 100,
+      "b": 50,
+      "created": "2023-05-22T00:06:44.661Z",
+      "result": 2
+    }
+  },
+  {
+    "model": "maths.math",
+    "pk": 10,
+    "fields": {
+      "operation": "sub",
+      "a": 32,
+      "b": 2,
+      "created": "2023-05-22T00:11:32.581Z",
+      "result": 2
+    }
+  },
+  {
+    "model": "maths.math",
+    "pk": 11,
+    "fields": {
+      "operation": "add",
+      "a": 500,
+      "b": 223,
+      "created": "2023-05-22T00:12:32.581Z",
+      "result": 5
+    }
+  }
+]

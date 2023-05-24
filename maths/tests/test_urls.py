@@ -5,6 +5,7 @@ from maths.views import math_operation
 
 
 class TestUrls(TestCase):
+
     def test_resolution_for_add(self):
         resolver = resolve('/maths/add/1/2')
         self.assertEqual(resolver.func, math_operation)

@@ -1,0 +1,68 @@
+[
+{
+    "model": "posts.post",
+    "pk": 1,
+    "fields": {
+        "title": "czy mo¿na mieszaæ ³y¿k¹ herbatê?",
+        "content": "mo¿na, ale trzeba mieæ dobr¹ ³y¿kê",
+        "created": "2023-05-20T22:08:58.773Z",
+        "modified": "2023-05-20T22:08:58.773Z",
+        "author": 1
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 2,
+    "fields": {
+        "title": "jak wybraæ dobr¹ ³y¿kê?",
+        "content": "na stronie internetowej ziemowita",
+        "created": "2023-05-20T22:11:34.692Z",
+        "modified": "2023-05-20T22:12:28.139Z",
+        "author": 1
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 3,
+    "fields": {
+        "title": "kupi³eœ ³y¿kê? zrobi³eœ to Ÿle!111!",
+        "content": "jak wy¿ej homo homini lyzkus nie ma takiej strony nie istnieje dobra ³y¿ka do mieszkania poza œwiatem zewnêtrznym albowiem s³owo przeciwko s³owu a cz³owiek cz³owiekowi cz³owiek",
+        "created": "2023-05-20T22:15:04.926Z",
+        "modified": "2023-05-20T22:15:04.926Z",
+        "author": 2
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 6,
+    "fields": {
+        "title": "karambol",
+        "content": "na drodze krajowo ¿yciowej",
+        "created": "2023-05-22T11:43:20.682Z",
+        "modified": "2023-05-22T11:43:20.682Z",
+        "author": 3
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 7,
+    "fields": {
+        "title": "elo",
+        "content": "pierwwszy post tego typu",
+        "created": "2023-05-22T12:00:37.369Z",
+        "modified": "2023-05-22T12:00:37.369Z",
+        "author": 4
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 8,
+    "fields": {
+        "title": "asa",
+        "content": "ala ma kota",
+        "created": "2023-05-23T19:30:06.617Z",
+        "modified": "2023-05-23T19:30:06.617Z",
+        "author": 3
+    }
+}
+]
