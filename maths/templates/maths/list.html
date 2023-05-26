@@ -3,8 +3,10 @@
 {% block title %}Maths list{% endblock %}
 
 {% block content %}
-    <form method="post">
-        <input>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="operation" id="operation" placeholder="operacja">
+        <input type="submit" value="szukaj">
     </form>
    <ul>
        {% for m in maths %}

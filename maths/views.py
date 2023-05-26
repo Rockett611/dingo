@@ -51,10 +51,21 @@ def math_operation(request, operation, a, b):
 
 
 def maths_list(request):
-    maths = Math.objects.all()
-    paginator = Paginator(maths, 5)
-    page_number = request.GET.get('page')
-    maths = paginator.get_page(page_number)
+    if request.method == "GET":
+        maths = Math.objects.all()
+        paginator = Paginator(maths, 5)
+        page_number = request.GET.get('page')
+        maths = paginator.get_page(page_number)
+    elif request.method == "POST":
+        operation = request.POST['operation']
+        print(operation)
+        maths = Math.objects.filter(operation=operation)
+        paginator = Paginator(maths, 5)
+        page_number = request.GET.get('page')
+        maths = paginator.get_page(page_number)
+
+
+
     return render(
         request=request,
         template_name="maths/list.html",
