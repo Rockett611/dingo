@@ -3,9 +3,14 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def greet_world(request):
-    return HttpResponse("Hello World!")
+
+def welcome_view(request):
+    return render(request, 'greetings/welcome.html', {})
 
 
-def greet_someone(request, name):
-    return HttpResponse(f"Hello {name.capitalize()}")
+def about_view(request):
+    return render(request, 'greetings/about.html', {})
+
+
+def contact_view(request):
+    return render(request, 'greetings/contact.html', {})

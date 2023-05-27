@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} welcome {% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'greetings/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <a href="{% url "greetings:about" %}">about</a>
+        <a href="{% url 'posts:posts_list' %}">posts</a>
+        <a href="{% url 'maths:list' %}">maths</a>
+        <a href="{% url 'greetings:contact' %}">contact</a>
+    </header>
+    <h1>dingo</h1>
+<!--    <img>-->
+    <div class="inner-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
