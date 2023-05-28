@@ -8,16 +8,20 @@
 </head>
 <body>
     <header>
-        <a href="{% url "greetings:about" %}">about</a>
+        <a href="{% url 'greetings:about' %}">about</a>
         <a href="{% url 'posts:posts_list' %}">posts</a>
         <a href="{% url 'maths:list' %}">maths</a>
         <a href="{% url 'greetings:contact' %}">contact</a>
     </header>
-    <h1>dingo</h1>
-<!--    <img>-->
+    <h1><a href="{% url 'greetings:welcome' %}">dingo</a></h1>
+    <img src="{% static 'greetings/img/dengo.webp' %}">
     <div class="inner-content">
         {% block content %}
         {% endblock %}
     </div>
+
+<footer>
+    <span>© rockett production 2023</span>
+</footer>
 </body>
 </html>

@@ -58,7 +58,6 @@ def maths_list(request):
         maths = paginator.get_page(page_number)
     elif request.method == "POST":
         operation = request.POST['operation']
-        print(operation)
         maths = Math.objects.filter(operation=operation)
         paginator = Paginator(maths, 5)
         page_number = request.GET.get('page')

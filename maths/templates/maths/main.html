@@ -15,10 +15,19 @@
 </head>
 <body>
 <div id="content">
-   <div id="header">
-       <img src="{% static 'maths/img/logo.svg' %}">
-       To jest część stała szablonu głównego
-   </div>
+   <header>
+       <div class="text">
+           <h1>dingo</h1>
+           <p>matematyk</p>
+       </div>
+       <div class="menu">
+           <a href="{% url 'greetings:welcome' %}">home</a>
+           <a href="{% url 'posts:posts_list' %}">posts</a>
+           <a href="{% url 'maths:list' %}">maths</a>
+           <a href="{% url 'greetings:about' %}">about</a>
+           <a href="{% url 'greetings:contact' %}">contact</a>
+       </div>
+   </header>
 
    {% bootstrap_messages %}
    <div id="inner-content">

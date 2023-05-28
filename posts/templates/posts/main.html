@@ -1,14 +1,36 @@
+{% load bootstrap4 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %} posts {% endblock %}</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'posts/css/style.css' %}">
+
+    {# Load CSS and JavaScript #}
+   {% bootstrap_css %}
+   {% bootstrap_javascript jquery='full' %}
+
 </head>
 <body>
-    <div class="content">
-        {% block content %}
-            nadpisz mnie
-        {% endblock %}
-    </div>
+<div class="content">
+    <header>
+       <div class="text">
+           <h1>dingo</h1>
+           <p>żurnalista</p>
+       </div>
+       <div class="menu">
+           <a href="{% url 'greetings:welcome' %}">home</a>
+           <a href="{% url 'posts:posts_list' %}">posts</a>
+           <a href="{% url 'maths:list' %}">maths</a>
+           <a href="{% url 'greetings:about' %}">about</a>
+           <a href="{% url 'greetings:contact' %}">contact</a>
+       </div>
+   </header>
+    {% block content %}
+        nadpisz mnie
+    {% endblock %}
+</div>
 </body>
 </html>

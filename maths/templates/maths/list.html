@@ -3,32 +3,46 @@
 {% block title %}Maths list{% endblock %}
 
 {% block content %}
-    <form method="POST">
-        {% csrf_token %}
-        <input type="text" name="operation" id="operation" placeholder="operacja">
-        <input type="submit" value="szukaj">
-    </form>
-   <ul>
+    <div class="search">
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="operation" id="operation" placeholder="operacja">
+            <input type="submit" value="szukaj">
+        </form>
+    </div>
+   <table>
+       <tr>
+           <th>id</th>
+           <th>a</th>
+           <th>b</th>
+           <th>operation</th>
+           <th>result</th>
+       </tr>
        {% for m in maths %}
-           {# <li><a href="/maths/histories/{{ m.id }}">{{ m }}</a></li> #}
-           <li><a href="{% url "maths:details" m.id %}">{{ m }}</a></li>
+       <tr>
+           <td><a href="{% url 'maths:details' m.id %}">{{ m.id }}</a></td>
+           <td>{{ m.a }}</td>
+           <td>{{ m.b }}</td>
+           <td>{{ m.operation }}</td>
+           <td>{{ m.result.value }}</td>
+       </tr>
        {% endfor %}
-   </ul>
+   </table>
     <div class="pagination">
-    <span class="step-links">
-       {% if maths.has_previous %}
-           <a href="?page=1">« first</a>
-           <a href="?page={{ maths.previous_page_number }}">previous</a>
-       {% endif %}
+        <span class="step-links">
+           {% if maths.has_previous %}
+               <a href="?page=1">« first</a>
+               <a href="?page={{ maths.previous_page_number }}">previous</a>
+           {% endif %}
 
-       <span class="current">
-           Page {{ maths.number }} of {{ maths.paginator.num_pages }}.
-       </span>
+           <span class="current">
+               Page {{ maths.number }} of {{ maths.paginator.num_pages }}.
+           </span>
 
-       {% if maths.has_next %}
-           <a href="?page={{ maths.next_page_number }}">next</a>
-           <a href="?page={{ maths.paginator.num_pages }}">last »</a>
-       {% endif %}
-   </span>
-   </div>
+           {% if maths.has_next %}
+               <a href="?page={{ maths.next_page_number }}">next</a>
+               <a href="?page={{ maths.paginator.num_pages }}">last »</a>
+           {% endif %}
+            </span>
+     </div>
 {% endblock %}

@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.core.paginator import Paginator
 from django.shortcuts import render
 
 
@@ -9,6 +10,9 @@ from .models import Author, Post
 
 def posts_list(request):
     posts = Post.objects.all()
+    paginator = Paginator(posts, 5)
+    page_number = request.GET.get('page')
+    posts = paginator.get_page(page_number)
     return render(request, 'posts/posts_list.html', {'posts': posts})
 
 

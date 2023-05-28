@@ -3,10 +3,36 @@
 {% block title %} posty wszystkie {% endblock %}
 
 {% block content %}
-    <button><a href="{% url "posts:add_post" %}">dodaj post</a></button>
-    <ul>
+    <button id="add-post"><a href="{% url 'posts:add_post' %}">dodaj post</a></button>
+    <table>
+        <tr>
+            <th>title</th>
+            <th>author</th>
+            <th>date</th>
+        </tr>
         {% for post in posts %}
-            <li><a href="{% url "posts:post_details" post.id %}">{{ post.title }}</a></li>
+        <tr>
+            <td><a href="{% url 'posts:post_details' post.id %}">{{ post.title }}</td>
+            <td>{{ post.author }}</td>
+            <td>{{ post.created }}</td>
+        </tr>
         {% endfor %}
-    </ul>
+    </table>
+    <div class="pagination">
+        <span class="step-links">
+           {% if posts.has_previous %}
+               <a href="?page=1">« first</a>
+               <a href="?page={{ posts.previous_page_number }}">previous</a>
+           {% endif %}
+
+           <span class="current">
+               Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+           </span>
+
+           {% if posts.has_next %}
+               <a href="?page={{ posts.next_page_number }}">next</a>
+               <a href="?page={{ posts.paginator.num_pages }}">last »</a>
+           {% endif %}
+        </span>
+    </div>
 {% endblock %}
