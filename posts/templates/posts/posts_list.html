@@ -3,7 +3,10 @@
 {% block title %} posty wszystkie {% endblock %}
 
 {% block content %}
+    {% if perms.posts.add_post %}
     <button id="add-post"><a href="{% url 'posts:add_post' %}">dodaj post</a></button>
+    {% else %}
+    {% endif %}
     <table>
         <tr>
             <th>title</th>
@@ -12,7 +15,7 @@
         </tr>
         {% for post in posts %}
         <tr>
-            <td><a href="{% url 'posts:post_details' post.id %}">{{ post.title }}</td>
+            <td><a href="{% url 'posts:post_details' post.id %}">{{ post.title }}</a></td>
             <td>{{ post.author }}</td>
             <td>{{ post.created }}</td>
         </tr>

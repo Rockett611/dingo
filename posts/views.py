@@ -24,7 +24,7 @@ def post_details(request, id):
 
 def add_post(request):
     if request.method == "POST":
-        form = PostForm(data=request.POST)
+        form = PostForm(data=request.POST, files=request.FILES)
         if form.is_valid():
             form.save()
 

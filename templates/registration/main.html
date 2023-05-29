@@ -1,8 +1,14 @@
+{% load bootstrap4 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Title{% endblock %}</title>
+
+    {# Load CSS and JavaScript #}
+   {% bootstrap_css %}
+   {% bootstrap_javascript jquery='full' %}
+
 </head>
 <body>
     {% block content %}

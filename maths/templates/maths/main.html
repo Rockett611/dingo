@@ -26,6 +26,13 @@
            <a href="{% url 'maths:list' %}">maths</a>
            <a href="{% url 'greetings:about' %}">about</a>
            <a href="{% url 'greetings:contact' %}">contact</a>
+           {% if user.is_authenticated %}
+               <p class="nav-link">
+                   {{ user.username }} | <a href="{% url 'logout' %}">logout</a>
+               </p>
+           {% else %}
+               <a class="nav-link" href="{% url 'login' %}">login</a>
+           {% endif %}
        </div>
    </header>
 
