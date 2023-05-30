@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -123,8 +124,8 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    "maths/static",
-    "posts/static",
+    # "maths/static",
+    # "posts/static",
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
