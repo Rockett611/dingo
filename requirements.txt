@@ -10,6 +10,7 @@ distlib==0.3.4
 Django==4.2.1
 django-bootstrap4==3.0.1
 django-grappelli==3.0.6
+django-jet==1.0.8
 executing==1.2.0
 filelock==3.7.1
 ipython==8.12.2

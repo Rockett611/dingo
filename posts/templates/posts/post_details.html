@@ -10,7 +10,9 @@
             <p>modyfikowany: {{ post.modified }}</p>
         {% endif %}
         <p>{{ post.content }}</p>
+        {% if post.image %}
         <div><img src="{{ post.image.url }}"></div>
+        {% endif %}
     </div>
 <p> do artykułów <a href="{% url "posts:posts_list" %}">wróć</a></p>
 {% endblock %}

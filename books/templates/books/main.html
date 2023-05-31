@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} posts {% endblock %}</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'posts/css/style.css' %}">
+</head>
+<body>
+<div class="content">
+    {% block content %}
+        nadpisz mnie
+    {% endblock %}
+</div>
+</body>
